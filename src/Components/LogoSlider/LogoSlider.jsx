@@ -51,8 +51,8 @@ const LogoSlider = () => {
       <div className="py-4 text-center">
         <Slider {...settings}>
           {[C1, C2, C3, C4, C5, C6].map((logo, index) => (
-            <div key={index}>
-              <img src={logo} alt={`Client ${index + 1}`} />
+            <div key={index} >
+              <img src={logo} alt={`Client ${index + 1}`} className="logoSliderimg" />
             </div>
           ))}
         </Slider>

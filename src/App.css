@@ -16,3 +16,23 @@
     background-color: #707070;
     border-radius: 9px;
 }
+.ourwork-slider {
+    display: flex;
+    justify-content: center; /* Center images */
+    align-items: center;
+    overflow: hidden; /* Prevents stretching */
+  }
+  
+  .image-container {
+    display: flex;
+    gap: 20px; /* Space between images */
+    justify-content: center;
+  }
+  
+  .image-container img {
+    width: 30%; /* Each image takes 30% of the width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounds corners */
+    object-fit: cover; /* Prevents distortion */
+  }
+  

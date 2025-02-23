@@ -15,6 +15,11 @@ import Footer from "./Components/Footer/Footer";
 import HeroBanner from "./Components/HeroBanner/Hero";
 import LogoSlider from "./Components/LogoSlider/LogoSlider";
 import ServicesSection from "./Components/Services/Services";
+import IndustriesSection from "./Components/Industries/Industries";
+import OurWorkSection from "./Components/OurWork/OurWork";
+import Insights from "./Components/Insights/Insights";
+import FAQSection from "./Components/FaQ/Faq";
+import TestimonialSection from "./Components/Testimonial/Testimonials";
 
 
 function App() {
@@ -24,6 +29,11 @@ function App() {
       <HeroBanner/>
       <LogoSlider/>
       <ServicesSection/>
+      <IndustriesSection/>
+      <OurWorkSection/>
+      <Insights/>
+      <FAQSection/>
+      <TestimonialSection/>
       <Footer/>
     </Router>
   );
