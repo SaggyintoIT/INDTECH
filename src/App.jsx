@@ -14,6 +14,7 @@ import './assets/css/slick-theme.css'
 import Footer from "./Components/Footer/Footer";
 import HeroBanner from "./Components/HeroBanner/Hero";
 import LogoSlider from "./Components/LogoSlider/LogoSlider";
+import ServicesSection from "./Components/Services/Services";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Navbar />
       <HeroBanner/>
       <LogoSlider/>
+      <ServicesSection/>
       <Footer/>
     </Router>
   );
