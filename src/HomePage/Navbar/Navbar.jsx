@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo.svg"; // Adjust the path accordingly
 
 const Navbar = () => {
   return (
-    <header className="my_header w-100" id="header">
+    <header className="my_header w-100 "  id="header">
       <div className="w-100 header_container d-flex align-items-center">
         <div className="logo_container">
           <Link to="/" className="d-block">
