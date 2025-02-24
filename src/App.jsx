@@ -28,7 +28,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      {/* <HeroBanner/>
+      <HeroBanner/>
       <LogoSlider/>
       <ServicesSection/>
       <IndustriesSection/>
@@ -36,7 +36,7 @@ function App() {
       <Insights/>
       <FAQSection/>
       <TestimonialSection/>
-      <Footer/> */}
+      <Footer/>
       <AboutBanner/>
       <TimelineSlider/>
     </Router>

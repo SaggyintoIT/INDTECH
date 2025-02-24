@@ -47,18 +47,7 @@
     }
 }
 
-.timelineslider .swiper-pagination-bullet-active::after {
-  background: url(./assets/images/timelineslideractive.png);
-  width: 60px;
-  height: 60px;
-  content: "";
-  position: absolute;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  top: -37px;
-  left: -20px;
-  z-index: 11;
-}
+
 
 .custom-pagination {
   position: absolute;

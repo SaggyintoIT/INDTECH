@@ -90,14 +90,14 @@ const TimelineSlider = () => {
       <div className="swiper-pagination custom-pagination"></div>
 
       {/* Swiper Navigation */}
-      <div className="swiper-button-prev"></div>
+      <div className="swiper-button-prev"></div> 
       <div className="swiper-button-next"></div>
 
       <style jsx>{`
     
         .custom-bullet-active {
           opacity: 1;
-          background-image: url(${ActiveBulletImage});
+          background-image: url(${ActiveBulletImage}) !important;
           background-size: cover;
           width: 3rem;
           height:3rem;
