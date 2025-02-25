@@ -15,7 +15,7 @@ const ServicesSection = () => {
           <div className="d-flex align-items-start servicesinner">
             <div className="number fn-30 fw-400 text-red">01</div>
             <div className="region">
-              <h2 className="accordion text-white">Web Development</h2>
+              <h2 className="accordion">Web Development</h2>
               <div className="pan">
                 <p>
                   Our team at IND Tech Mark offers top web development services

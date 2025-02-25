@@ -1138,14 +1138,16 @@ svg {
   background-color: transparent;
 }
 .swiper-pagination-bullet em {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 16px;
+  /* line-height: -0.2; Adjust line height to prevent overlap */
   color: var(--themecolor3);
   font-style: normal;
-  margin-top: -37px;
-  display: block;
+  margin-top: 0; /* Remove negative margin */
+  display: inline-block; /* Keep text in a single line */
   text-transform: uppercase;
+  white-space: nowrap; /* Ensures text stays in one line */
 }
+
 .swiper-pagination-bullet i {
   position: absolute;
   bottom: 0;
@@ -1257,6 +1259,7 @@ svg {
 
 .btn-control .btn-circle:hover {
   color: rgb(199 196 196);
+  background-color: red;
 }
 .btn-circle:hover .icon {
   transform: translate(10px, -10px);

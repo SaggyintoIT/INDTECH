@@ -1,18 +1,27 @@
-.custom-dots {
+.btn-wrap {
+  position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.custom-dots .dot {
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
+/* Progress Bar */
+.progress-bar {
+  display: flex;
+  gap: 5px;
+  width: 100px;
+  height: 5px;
+  align-items: center;
 }
 
-.custom-dots .dot.active {
-  background-color: #000;
+.progress-segment {
+  flex: 1;
+  height: 5px;
+  background: #ddd;
+  transition: background 0.3s ease-in-out;
+}
+
+.progress-segment.active {
+  background: #000; /* Darkened for active segments */
 }
