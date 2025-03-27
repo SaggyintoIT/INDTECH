@@ -67,29 +67,41 @@ const Navbar = () => {
                       <div className="col-md-3 bdr">
                         <ul className="sub-menu">
                           <li>
-                            <a href="/about-us">About Us</a>
+                            <a href="https://about-us-mu.vercel.app/">
+                              About Us
+                            </a>
                           </li>
                           <li>
-                            <a href="/our-team">Our Team</a>
+                            <a href="https://contact-us-roan-one.vercel.app/">
+                              Our Team
+                            </a>
                           </li>
                           <li>
-                            <a href="/careers">Career</a>
+                            <a href="https://career-flax-six.vercel.app/">
+                              Career
+                            </a>
                           </li>
                           <li>
-                            <a href="/contact-us">Contact Us</a>
+                            <a href="https://contact-us-roan-one.vercel.app/">
+                              Contact Us
+                            </a>
                           </li>
                         </ul>
                       </div>
                       <div className="col-md-3 bdr">
                         <ul className="sub-menu">
                           <li>
-                            <a href="/our-client">Our Clients</a>
+                            <a href="https://client-dun-psi.vercel.app/">
+                              Our Clients
+                            </a>
                           </li>
                           <li>
-                            <a href="/press-media">Press & Media</a>
+                            <a href="https://press-media.vercel.app/">
+                              Press & Media
+                            </a>
                           </li>
                           <li>
-                            <a href="/life-at-indtechmark">
+                            <a href="https://lifeat-ind.vercel.app/">
                               Life at INDTechMark
                             </a>
                           </li>

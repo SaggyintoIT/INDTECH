@@ -4,345 +4,199 @@
 // import "slick-carousel/slick/slick-theme.css";
 
 // // Import images
-// import amanImage from "../../assets/images/aman.svg";
-// import ayushImage from "../../assets/images/Ayush.svg";
-// import dhirendraImage from "../../assets/images/Dhirendra.svg";
-// import leftArrow from "../../assets/images/left.svg";
-// import rightArrow from "../../assets/images/right.svg";
-// import "./Testimonials.css";
-// const TestimonialSection = () => {
+// import AmanImg from "../../assets/images/aman.svg";
+// import AyushImg from "../../assets/images/Ayush.svg";
+// import DhirendraImg from "../../assets/images/Dhirendra.svg";
+// import LeftArrow from "../../assets/images/left.png";
+// import RightArrow from "../../assets/images/right.png";
+// import "./Testimonials.css"; // Add your custom CSS here
+
+// const Testimonial = () => {
 //   const sliderRef = useRef(null);
 
-//   // Slick Carousel settings
+//   // Slider settings
 //   const settings = {
-//     slidesToShow: 2.5,
-//     slidesToScroll: 1,
+//     dots: true, // Show dots for navigation
+//     infinite: true, // Infinite loop
+//     speed: 500, // Transition speed
+//     slidesToShow: 3, // Show 3 testimonials by default
+//     slidesToScroll: 1, // Scroll 1 testimonial at a time
 //     arrows: false,
-//     dots: true,
-//     infinite: true,
-//     speed: 300,
-//     autoplaySpeed: 5000,
-//     autoplay: true,
 //     responsive: [
 //       {
-//         breakpoint: 991,
+//         breakpoint: 991, // For screens smaller than 992px
 //         settings: {
-//           slidesToShow: 2.5,
+//           slidesToShow: 2, // Show 2 testimonials
 //         },
 //       },
 //       {
-//         breakpoint: 767,
+//         breakpoint: 767, // For screens smaller than 768px
 //         settings: {
-//           slidesToShow: 1,
+//           slidesToShow: 1, // Show 1 testimonial
 //         },
 //       },
 //     ],
 //   };
 
-//   // Custom navigation functions
+//   // Go to the previous slide
 //   const goToPrev = () => {
-//     sliderRef.current.slickPrev();
+//     if (sliderRef.current) sliderRef.current.slickPrev();
 //   };
 
+//   // Go to the next slide
 //   const goToNext = () => {
-//     sliderRef.current.slickNext();
+//     if (sliderRef.current) sliderRef.current.slickNext();
 //   };
+
+//   // Testimonial data
+//   const testimonials = [
+//     {
+//       id: 1,
+//       text: "We were happy that we found the best UI/UX Design agency and best product design agency to work with. We will definitely continue to work with them as we have greatest output.",
+//       name: "Aman Singh",
+//       location: "Jaipur, Rajasthan",
+//       image: AmanImg,
+//     },
+//     {
+//       id: 2,
+//       text: "Their ability to produce high-quality, on-brand design elements and animation within days was a game changer!",
+//       name: "Ayush Kumar",
+//       location: "Jaipur, Rajasthan",
+//       image: AyushImg,
+//     },
+//     {
+//       id: 3,
+//       text: "INDTech Mark swiftly delivered content in two weeks, meeting client expectations, and managed workflow and communication efficiently and positively.",
+//       name: "Dhirendra Kumar",
+//       location: "Jaipur, Rajasthan",
+//       image: DhirendraImg,
+//     },
+//     {
+//       id: 4,
+//       text: "INDTech Mark swiftly delivered content in two weeks, meeting client expectations, and managed workflow and communication efficiently and positively.",
+//       name: "Dhirendra Kumar",
+//       location: "Jaipur, Rajasthan",
+//       image: DhirendraImg,
+//     },
+//     {
+//       id: 5,
+//       text: "INDTech Mark swiftly delivered content in two weeks, meeting client expectations, and managed workflow and communication efficiently and positively.",
+//       name: "Dhirendra Kumar",
+//       location: "Jaipur, Rajasthan",
+//       image: DhirendraImg,
+//     },
+//     {
+//       id: 6,
+//       text: "INDTech Mark swiftly delivered content in two weeks, meeting client expectations, and managed workflow and communication efficiently and positively.",
+//       name: "Dhirendra Kumar",
+//       location: "Jaipur, Rajasthan",
+//       image: DhirendraImg,
+//     },
+//   ];
 
 //   return (
-//     <section className="bodypx Testimonial bg-white py-80 pb-1">
-//       <div className="container-fluid">
+//     <section className="bodypx Testimonial bg-white py-80">
+//       <div className="container-fluid ">
 //         <div className="row">
 //           <div className="col-md-12 text-center">
 //             <h2>Client's Testimonial</h2>
 //             <p>
 //               Client success stories showcasing IND TechMark expertise in mobile
-//               app development, <br />
+//               app development,
+//               <br />
 //               web development, and digital transformation services
 //             </p>
 //           </div>
 
-//           <div className="pt-3 px-0">
-//             <div className="testimonial">
-//               <div className="testimonial__inner">
-//                 {/* Slick Carousel */}
+//           <div className="pt-0 px-0 height">
+//             <div className="testimonial ">
+//               <div className="testimonial__inner ">
+//                 {/* Slider Component */}
 //                 <Slider ref={sliderRef} {...settings}>
-//                   {/* Testimonial Slide 1 */}
-//                   <div className="testimonial-slide">
-//                     <div className="testimonial_box">
-//                       <div className="testimonial_box-inner">
-//                         <div className="testimonial_box-top">
-//                           <div className="testimonial_box-text">
-//                             <p>
-//                               We were happy that we found the best UI/UX Design
-//                               agency and best product design agency to work
-//                               with. We will definitely continue to work with
-//                               them as we have greatest output.
-//                             </p>
-//                             <div className="d-flex align-items-center d-md-none">
-//                               <div className="rate me-auto">
-//                                 <input
-//                                   type="radio"
-//                                   id="star5"
-//                                   name="rate"
-//                                   value="5"
-//                                 />
-//                                 <label htmlFor="star5" title="text">
-//                                   5 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star4"
-//                                   name="rate"
-//                                   value="4"
-//                                 />
-//                                 <label htmlFor="star4" title="text">
-//                                   4 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star3"
-//                                   name="rate"
-//                                   value="3"
-//                                 />
-//                                 <label htmlFor="star3" title="text">
-//                                   3 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star2"
-//                                   name="rate"
-//                                   value="2"
-//                                 />
-//                                 <label htmlFor="star2" title="text">
-//                                   2 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star1"
-//                                   name="rate"
-//                                   value="1"
-//                                 />
-//                                 <label htmlFor="star1" title="text">
-//                                   1 star
-//                                 </label>
+//                   {testimonials.map((testimonial) => (
+//                     <div key={testimonial.id} className="testimonial-slide ">
+//                       <div className="testimonial_box ">
+//                         <div className="testimonial_box-inner  ">
+//                           <div className="testimonial_box-top ">
+//                             <div className="testimonial_box-text ">
+//                               <p>{testimonial.text}</p>
+//                               <div className="d-flex align-items-center d-md-none ">
+//                                 <div className="rate me-auto">
+//                                   {[1, 2, 3, 4, 5].map((star) => (
+//                                     <React.Fragment key={star}>
+//                                       <input
+//                                         type="radio"
+//                                         id={`star${star}-${testimonial.id}`}
+//                                         name={`rate-${testimonial.id}`}
+//                                         value={star}
+//                                       />
+//                                       <label
+//                                         htmlFor={`star${star}-${testimonial.id}`}
+//                                         title={`${star} stars`}
+//                                       >
+//                                         ★
+//                                       </label>
+//                                     </React.Fragment>
+//                                   ))}
+//                                 </div>
+//                                 <span className="fw-bold fn-18">3.0 / 3.0</span>
 //                               </div>
-//                               <span className="fw-bold fn-18">3.0 / 3.0</span>
 //                             </div>
+//                             <div className="testimonial_box-shape"></div>
 //                           </div>
-//                           <div className="testimonial_box-shape"></div>
-//                         </div>
-//                         <div className="testimonial_box-bottom">
-//                           <div className="testimonial_box-profile align-items-center">
-//                             <div className="testimonial_box-img">
-//                               <img src={amanImage} alt="Aman" />
-//                             </div>
-//                             <div className="testimonial_box-info">
-//                               <div className="testimonial_box-name">
-//                                 <h3 className="mb-0">Aman Singh</h3>
-//                                 <p className="mb-1">Jaipur, Rajasthan</p>
+//                           <div className="testimonial_box-bottom">
+//                             <div className="testimonial_box-profile align-items-center">
+//                               <div className="testimonial_box-img">
+//                                 <img
+//                                   src={testimonial.image}
+//                                   alt={testimonial.name}
+//                                 />
 //                               </div>
-//                             </div>
-//                             <div className="d-md-flex align-items-center ps-3 d-none">
-//                               <div className="rate ms-auto">
-//                                 <input
-//                                   type="radio"
-//                                   id="star5"
-//                                   name="rate"
-//                                   value="5"
-//                                 />
-//                                 <label htmlFor="star5" title="text">
-//                                   5 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star4"
-//                                   name="rate"
-//                                   value="4"
-//                                 />
-//                                 <label htmlFor="star4" title="text">
-//                                   4 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star3"
-//                                   name="rate"
-//                                   value="3"
-//                                 />
-//                                 <label htmlFor="star3" title="text">
-//                                   3 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star2"
-//                                   name="rate"
-//                                   value="2"
-//                                 />
-//                                 <label htmlFor="star2" title="text">
-//                                   2 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star1"
-//                                   name="rate"
-//                                   value="1"
-//                                 />
-//                                 <label htmlFor="star1" title="text">
-//                                   1 star
-//                                 </label>
+//                               <div className="testimonial_box-info">
+//                                 <div className="testimonial_box-name">
+//                                   <h3 className="mb-0">{testimonial.name}</h3>
+//                                   <p className="mb-1">{testimonial.location}</p>
+//                                 </div>
 //                               </div>
-//                               <span className="fw-bold fn-18">3.0 / 3.0</span>
+//                               <div className="d-md-flex align-items-center ps-3 d-none">
+//                                 <div className="rate ms-auto">
+//                                   {[5, 4, 3, 2, 1].map((star) => (
+//                                     <React.Fragment key={star}>
+//                                       <input
+//                                         type="radio"
+//                                         id={`star${star}-desktop-${testimonial.id}`}
+//                                         name={`rate-desktop-${testimonial.id}`}
+//                                         value={star}
+//                                       />
+//                                       <label
+//                                         htmlFor={`star${star}-desktop-${testimonial.id}`}
+//                                         title="text"
+//                                       >
+//                                         {star} stars
+//                                       </label>
+//                                     </React.Fragment>
+//                                   ))}
+//                                 </div>
+//                                 <span className="fw-bold fn-18">3.0 / 3.0</span>
+//                               </div>
 //                             </div>
 //                           </div>
 //                         </div>
 //                       </div>
 //                     </div>
-//                   </div>
-
-//                   {/* Testimonial Slide 2 */}
-//                   <div className="testimonial-slide">
-//                     <div className="testimonial_box">
-//                       <div className="testimonial_box-inner">
-//                         <div className="testimonial_box-top">
-//                           <div className="testimonial_box-text">
-//                             <p>
-//                               Their ability to produce high-quality, on-brand
-//                               design elements and animation within days was a
-//                               game changer!
-//                             </p>
-//                             <div className="d-flex align-items-center d-md-none">
-//                               <div className="rate me-auto">
-//                                 <input
-//                                   type="radio"
-//                                   id="star5"
-//                                   name="rate"
-//                                   value="5"
-//                                 />
-//                                 <label htmlFor="star5" title="text">
-//                                   5 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star4"
-//                                   name="rate"
-//                                   value="4"
-//                                 />
-//                                 <label htmlFor="star4" title="text">
-//                                   4 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star3"
-//                                   name="rate"
-//                                   value="3"
-//                                 />
-//                                 <label htmlFor="star3" title="text">
-//                                   3 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star2"
-//                                   name="rate"
-//                                   value="2"
-//                                 />
-//                                 <label htmlFor="star2" title="text">
-//                                   2 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star1"
-//                                   name="rate"
-//                                   value="1"
-//                                 />
-//                                 <label htmlFor="star1" title="text">
-//                                   1 star
-//                                 </label>
-//                               </div>
-//                               <span className="fw-bold fn-18">3.0 / 3.0</span>
-//                             </div>
-//                           </div>
-//                           <div className="testimonial_box-shape"></div>
-//                         </div>
-//                         <div className="testimonial_box-bottom">
-//                           <div className="testimonial_box-profile align-items-center">
-//                             <div className="testimonial_box-img">
-//                               <img src={ayushImage} alt="Ayush" />
-//                             </div>
-//                             <div className="testimonial_box-info">
-//                               <div className="testimonial_box-name">
-//                                 <h3 className="mb-0">Ayush Kumar</h3>
-//                                 <p className="mb-1">Jaipur, Rajasthan</p>
-//                               </div>
-//                             </div>
-//                             <div className="d-md-flex align-items-center ps-3 d-none">
-//                               <div className="rate ms-auto">
-//                                 <input
-//                                   type="radio"
-//                                   id="star5"
-//                                   name="rate"
-//                                   value="5"
-//                                 />
-//                                 <label htmlFor="star5" title="text">
-//                                   5 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star4"
-//                                   name="rate"
-//                                   value="4"
-//                                 />
-//                                 <label htmlFor="star4" title="text">
-//                                   4 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star3"
-//                                   name="rate"
-//                                   value="3"
-//                                 />
-//                                 <label htmlFor="star3" title="text">
-//                                   3 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star2"
-//                                   name="rate"
-//                                   value="2"
-//                                 />
-//                                 <label htmlFor="star2" title="text">
-//                                   2 stars
-//                                 </label>
-//                                 <input
-//                                   type="radio"
-//                                   id="star1"
-//                                   name="rate"
-//                                   value="1"
-//                                 />
-//                                 <label htmlFor="star1" title="text">
-//                                   1 star
-//                                 </label>
-//                               </div>
-//                               <span className="fw-bold fn-18">3.0 / 3.0</span>
-//                             </div>
-//                           </div>
-//                         </div>
-//                       </div>
-//                     </div>
-//                   </div>
-
-//                   {/* Add more testimonial slides as needed */}
+//                   ))}
 //                 </Slider>
 
-//                 {/* Custom Navigation Buttons */}
-//                 <div className="btn-wrap">
+//                 {/* Custom Arrows */}
+//                 <div className="btn-wrap ">
 //                   <button className="prev-btn com-btn mr-3" onClick={goToPrev}>
 //                     <span>
-//                       <img src={leftArrow} alt="Previous" />
+//                       <img src={LeftArrow} alt="Previous" />
 //                     </span>
 //                   </button>
-//                   <div className="progress-bar"></div> {/* Progress Line */}
 //                   <button className="next-btn com-btn" onClick={goToNext}>
 //                     <span>
-//                       <img src={rightArrow} alt="Next" />
+//                       <img src={RightArrow} alt="Next" />
 //                     </span>
 //                   </button>
 //                 </div>
@@ -355,123 +209,174 @@
 //   );
 // };
 
-// export default TestimonialSection;
-
-import React, { useRef, useState } from "react";
+// export default Testimonial;
+import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Import images
-import amanImage from "../../assets/images/aman.svg";
-import ayushImage from "../../assets/images/Ayush.svg";
-import dhirendraImage from "../../assets/images/Dhirendra.svg";
-import leftArrow from "../../assets/images/left.svg";
-import rightArrow from "../../assets/images/right.svg";
-import "./Testimonials.css";
+// Import images for arrows
+import LeftArrow from "../../assets/images/left.png";
+import RightArrow from "../../assets/images/right.png";
+import "./Testimonials.css"; // Add your custom CSS here
 
-const TestimonialSection = () => {
+const Testimonial = () => {
   const sliderRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [testimonials, setTestimonials] = useState([]); // State to store fetched testimonials
+  const [loading, setLoading] = useState(true); // State to handle loading state
+  const [error, setError] = useState(null); // State to handle errors
 
-  // Slick Carousel settings
+  // Fetch testimonials from the backend
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/testimonials");
+        if (!response.ok) {
+          throw new Error("Failed to fetch testimonials");
+        }
+        const data = await response.json();
+        setTestimonials(data); // Set fetched data to state
+        setLoading(false); // Set loading to false
+      } catch (error) {
+        setError(error.message); // Set error message
+        setLoading(false); // Set loading to false
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  // Slider settings
   const settings = {
-    slidesToShow: 2.5,
-    slidesToScroll: 1,
+    dots: true, // Show dots for navigation
+    infinite: true, // Infinite loop
+    speed: 500, // Transition speed
+    slidesToShow: 3, // Show 3 testimonials by default
+    slidesToScroll: 1, // Scroll 1 testimonial at a time
     arrows: false,
-    dots: true,
-    infinite: true,
-    speed: 300,
-    autoplaySpeed: 5000,
-    autoplay: true,
-    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
     responsive: [
       {
-        breakpoint: 991,
+        breakpoint: 991, // For screens smaller than 992px
         settings: {
-          slidesToShow: 2.5,
+          slidesToShow: 2, // Show 2 testimonials
         },
       },
       {
-        breakpoint: 767,
+        breakpoint: 767, // For screens smaller than 768px
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Show 1 testimonial
         },
       },
     ],
   };
 
-  // Custom navigation functions
+  // Go to the previous slide
   const goToPrev = () => {
     if (sliderRef.current) sliderRef.current.slickPrev();
   };
 
+  // Go to the next slide
   const goToNext = () => {
     if (sliderRef.current) sliderRef.current.slickNext();
   };
 
-  const testimonials = [
-    {
-      image: amanImage,
-      name: "Aman Singh",
-      location: "Jaipur, Rajasthan",
-      review:
-        "We were happy that we found the best UI/UX Design agency and best product design agency to work with. We will definitely continue to work with them as we have greatest output.",
-    },
-    {
-      image: ayushImage,
-      name: "Ayush Kumar",
-      location: "Jaipur, Rajasthan",
-      review:
-        "Their ability to produce high-quality, on-brand design elements and animation within days was a game changer!",
-    },
-    {
-      image: dhirendraImage,
-      name: "Dhirendra Singh",
-      location: "Delhi, India",
-      review:
-        "The professionalism and attention to detail of IND TechMark's team were outstanding. We highly recommend them for any digital transformation projects.",
-    },
-  ];
+  // Display loading or error messages
+  if (loading) {
+    return <div>Loading testimonials...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
-    <section className="bodypx Testimonial bg-white py-80 pb-1">
-      <div className="container-fluid">
+    <section className="bodypx Testimonial bg-white py-80">
+      <div className="container-fluid ">
         <div className="row">
           <div className="col-md-12 text-center">
             <h2>Client's Testimonial</h2>
             <p>
               Client success stories showcasing IND TechMark expertise in mobile
-              app development, web development, and digital transformation
-              services
+              app development,
+              <br />
+              web development, and digital transformation services
             </p>
           </div>
 
-          <div className="pt-3 px-0">
-            <div className="testimonial">
-              <div className="testimonial__inner">
-                {/* Slick Carousel */}
+          <div className="pt-0 px-0 height">
+            <div className="testimonial ">
+              <div className="testimonial__inner ">
+                {/* Slider Component */}
                 <Slider ref={sliderRef} {...settings}>
-                  {testimonials.map((testimonial, index) => (
-                    <div key={index} className="testimonial-slide">
-                      <div className="testimonial_box">
-                        <div className="testimonial_box-inner">
-                          <div className="testimonial_box-top">
-                            <div className="testimonial_box-text">
-                              <p>{testimonial.review}</p>
+                  {testimonials.map((testimonial) => (
+                    <div key={testimonial._id} className="testimonial-slide ">
+                      <div className="testimonial_box ">
+                        <div className="testimonial_box-inner  ">
+                          <div className="testimonial_box-top ">
+                            <div className="testimonial_box-text ">
+                              <p>{testimonial.text}</p>
+                              <div className="d-flex align-items-center d-md-none ">
+                                <div className="rate me-auto">
+                                  {[1, 2, 3, 4, 5].map((star) => (
+                                    <React.Fragment key={star}>
+                                      <input
+                                        type="radio"
+                                        id={`star${star}-${testimonial._id}`}
+                                        name={`rate-${testimonial._id}`}
+                                        value={star}
+                                      />
+                                      <label
+                                        htmlFor={`star${star}-${testimonial._id}`}
+                                        title={`${star} stars`}
+                                      >
+                                        ★
+                                      </label>
+                                    </React.Fragment>
+                                  ))}
+                                </div>
+                                <span className="fw-bold fn-18">
+                                  {testimonial.rating} / 5.0
+                                </span>
+                              </div>
                             </div>
+                            <div className="testimonial_box-shape"></div>
                           </div>
                           <div className="testimonial_box-bottom">
                             <div className="testimonial_box-profile align-items-center">
                               <div className="testimonial_box-img">
                                 <img
-                                  src={testimonial.image}
+                                  src={`http://localhost:5000/${testimonial.image}`} // Use the backend URL
                                   alt={testimonial.name}
                                 />
                               </div>
                               <div className="testimonial_box-info">
-                                <h3 className="mb-0">{testimonial.name}</h3>
-                                <p className="mb-1">{testimonial.location}</p>
+                                <div className="testimonial_box-name">
+                                  <h3 className="mb-0">{testimonial.name}</h3>
+                                  <p className="mb-1">{testimonial.location}</p>
+                                </div>
+                              </div>
+                              <div className="d-md-flex align-items-center ps-3 d-none">
+                                <div className="rate ms-auto">
+                                  {[5, 4, 3, 2, 1].map((star) => (
+                                    <React.Fragment key={star}>
+                                      <input
+                                        type="radio"
+                                        id={`star${star}-desktop-${testimonial._id}`}
+                                        name={`rate-desktop-${testimonial._id}`}
+                                        value={star}
+                                      />
+                                      <label
+                                        htmlFor={`star${star}-desktop-${testimonial._id}`}
+                                        title="text"
+                                      >
+                                        {star} stars
+                                      </label>
+                                    </React.Fragment>
+                                  ))}
+                                </div>
+                                <span className="fw-bold fn-18">
+                                  {testimonial.rating} / 5.0
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -481,31 +386,16 @@ const TestimonialSection = () => {
                   ))}
                 </Slider>
 
-                {/* Custom Navigation Buttons */}
-                <div className="btn-wrap">
+                {/* Custom Arrows */}
+                <div className="btn-wrap ">
                   <button className="prev-btn com-btn mr-3" onClick={goToPrev}>
                     <span>
-                      <img src={leftArrow} alt="Previous" />
+                      <img src={LeftArrow} alt="Previous" />
                     </span>
                   </button>
-
-                  {/* Progress Bar */}
-                  <div className="progress-bar">
-                    {[...Array(testimonials.length)].map((_, index) => (
-                      <span
-                        key={index}
-                        className={`progress-segment ${
-                          index === currentSlide % testimonials.length
-                            ? "active"
-                            : ""
-                        }`}
-                      ></span>
-                    ))}
-                  </div>
-
                   <button className="next-btn com-btn" onClick={goToNext}>
                     <span>
-                      <img src={rightArrow} alt="Next" />
+                      <img src={RightArrow} alt="Next" />
                     </span>
                   </button>
                 </div>
@@ -518,4 +408,4 @@ const TestimonialSection = () => {
   );
 };
 
-export default TestimonialSection;
+export default Testimonial;

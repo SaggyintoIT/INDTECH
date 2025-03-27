@@ -73,11 +73,102 @@
 // };
 
 // export default FAQSection;
-import React from "react";
+// import React from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
+
+// const Faqs = () => {
+//   return (
+//     <section className="bodypx services bg-dark py-80" data-aos="fade-up">
+//       <div className="container-fluid">
+//         <div className="row">
+//           <div className="col-md-12 pb-md-4 text-center text-md-start">
+//             <h2 className="text-white">FAQs</h2>
+//           </div>
+//           <div className="container faqs">
+//             <div className="accordion" id="accordionExample">
+//               {faqData.map((faq, index) => (
+//                 <div className="accordion-item" key={index}>
+//                   <div className="accordion-header">
+//                     <button
+//                       className="accordion-button collapsed"
+//                       type="button"
+//                       data-bs-toggle="collapse"
+//                       data-bs-target={`#collapse${index}`}
+//                       aria-expanded="false"
+//                       aria-controls={`collapse${index}`}
+//                     >
+//                       {faq.question}
+//                     </button>
+//                   </div>
+//                   <div
+//                     id={`collapse${index}`}
+//                     className="accordion-collapse collapse"
+//                     data-bs-parent="#accordionExample"
+//                   >
+//                     <div className="accordion-body">
+//                       <p>{faq.answer}</p>
+//                     </div>
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// const faqData = [
+//   {
+//     question: "What services does your company offer?",
+//     answer:
+//       "We, at IND Tech Mark, provide a wide range of digital solutions, including web design and development, app development, and digital marketing.",
+//   },
+//   {
+//     question: "What industries do you specialize in?",
+//     answer:
+//       "We specialize in various industries such as retail, finance, healthcare, e-commerce, and education.",
+//   },
+//   {
+//     question: "Do you offer ongoing support and maintenance?",
+//     answer:
+//       "Yes! We offer end-to-end support and maintenance services to ensure smooth operation of your digital solutions.",
+//   },
+//   {
+//     question: "Do you offer a free consultation?",
+//     answer:
+//       "Yes! We provide a free initial consultation to understand your needs and provide tailored solutions.",
+//   },
+//   {
+//     question: "Why should I hire IND Tech Mark for web development?",
+//     answer:
+//       "We offer expert-driven, high-quality, and innovative web solutions tailored to your business goals.",
+//   },
+//   {
+//     question: "Do you offer custom web or app development services?",
+//     answer:
+//       "Yes, we create tailored web and app solutions that align with your unique business needs.",
+//   },
+// ];
+
+// export default Faqs;
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const Faqs = () => {
+  const [faqs, setFaqs] = useState([]);
+
+  // Fetch FAQs on component mount
+  useEffect(() => {
+    fetch("http://localhost:5000/api/faqs")
+      .then((response) => response.json())
+      .then((data) => setFaqs(data))
+      .catch((error) => console.error("Error fetching FAQs:", error));
+  }, []);
+
   return (
     <section className="bodypx services bg-dark py-80" data-aos="fade-up">
       <div className="container-fluid">
@@ -87,7 +178,7 @@ const Faqs = () => {
           </div>
           <div className="container faqs">
             <div className="accordion" id="accordionExample">
-              {faqData.map((faq, index) => (
+              {faqs.map((faq, index) => (
                 <div className="accordion-item" key={index}>
                   <div className="accordion-header">
                     <button
@@ -119,38 +210,5 @@ const Faqs = () => {
     </section>
   );
 };
-
-const faqData = [
-  {
-    question: "What services does your company offer?",
-    answer:
-      "We, at IND Tech Mark, provide a wide range of digital solutions, including web design and development, app development, and digital marketing.",
-  },
-  {
-    question: "What industries do you specialize in?",
-    answer:
-      "We specialize in various industries such as retail, finance, healthcare, e-commerce, and education.",
-  },
-  {
-    question: "Do you offer ongoing support and maintenance?",
-    answer:
-      "Yes! We offer end-to-end support and maintenance services to ensure smooth operation of your digital solutions.",
-  },
-  {
-    question: "Do you offer a free consultation?",
-    answer:
-      "Yes! We provide a free initial consultation to understand your needs and provide tailored solutions.",
-  },
-  {
-    question: "Why should I hire IND Tech Mark for web development?",
-    answer:
-      "We offer expert-driven, high-quality, and innovative web solutions tailored to your business goals.",
-  },
-  {
-    question: "Do you offer custom web or app development services?",
-    answer:
-      "Yes, we create tailored web and app solutions that align with your unique business needs.",
-  },
-];
 
 export default Faqs;
