@@ -1,0 +1,36 @@
+.btn-black {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: 2px solid white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.btn-black:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+  transform: translateY(-3px); /* Slight upward motion */
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.btn-black span {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-black:hover span {
+  transform: translateX(5px); /* Moves text slightly to the right */
+}
+
+.icon-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-black:hover .icon-arrow {
+  transform: translateX(5px); /* Moves arrow slightly to the right */
+}

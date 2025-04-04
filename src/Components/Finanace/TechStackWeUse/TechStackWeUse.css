@@ -1,0 +1,58 @@
+/* Container for the logo slider */
+.logo-slider-container {
+  width: 100%;
+  overflow: hidden; /* Hide overflow to create the sliding effect */
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+}
+
+.logo-slider-track {
+  display: inline-flex;
+  animation: slide 30s linear infinite; /* Adjust animation duration as needed */
+}
+
+/* Individual logo slide */
+.logo-slide {
+  margin-right: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo image styling */
+.logo-slide img {
+  /* max-width: 60px;  */
+  height: auto;
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-50%); /* Move to the left */
+  }
+}
+
+/* Hover effect for titles */
+.nav-link {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.h4,
+h4 {
+  font-size: calc(0.6rem + 0.3vw) !important;
+}

@@ -1,0 +1,24 @@
+/* Gallery.css */
+.portfolio-item {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.portfolio-item.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.portfolio-item.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Disable clicks on hidden items */
+}
+
+.portfolio-container {
+  position: relative;
+}

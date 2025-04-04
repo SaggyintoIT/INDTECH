@@ -1,0 +1,47 @@
+/* Logo Slider Container */
+.bottomslide {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 20px 0;
+}
+
+.clientSwipera {
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-slider {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-slider-track {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Adjust animation duration as needed */
+}
+
+.logo-slide {
+  flex: 0 0 auto;
+  margin: 0 20px; /* Adjust spacing between logos */
+}
+
+.logo-slide img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.7; /* Slightly transparent logos */
+  transition: opacity 0.3s ease;
+}
+
+.logo-slide img:hover {
+  opacity: 1; /* Fully opaque on hover */
+}
+
+/* Keyframes for infinite scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move the track by half its width */
+  }
+}

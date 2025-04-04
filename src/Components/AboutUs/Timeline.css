@@ -1,0 +1,52 @@
+/* Container for dots with line */
+.custom-pagination {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+  margin: 10px 0 0 300px;
+  padding: 0 10px;
+  height: 50px;
+  gap: 100px;
+}
+
+/* Horizontal line behind dots */
+.custom-pagination::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 29%;
+  height: 3px;
+  background-color: #ccc;
+  transform: translateY(-50%);
+  z-index: 0;
+  margin-left: 10px;
+}
+
+/* Normal (inactive) bullets */
+.custom-bullet {
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Active bullet with image */
+.custom-bullet-active {
+  width: 40px;
+  height: 40px;
+  background-image: url("../../assets/images/timelineslideractive.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: 3;
+  border-radius: 50%;
+}
